@@ -12,7 +12,8 @@ provider "aws" {
 resource "aws_instance" "myFirstEC2Instance" {
   ami = "ami-00399ec92321828f5"
   instance_type = "t2.micro"
-
+  key_name = locals.key_name
+  
   tags = {
     Name = "myFirstEC2Instance"
   }
