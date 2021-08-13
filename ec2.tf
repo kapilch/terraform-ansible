@@ -4,13 +4,13 @@ locals {
   private_key_path = "~/.ssh/SSHKeys.pem"
 }
 provider "aws" {
-  access_key = var.access_key
-  secret_key = var.secret_key
+  #access_key = var.access_key
+  #secret_key = var.secret_key
   region = "us-east-2"
 }
 
 resource "aws_instance" "myFirstEC2Instance" {
-  ami = "ami-0443305dabd4be2bc"
+  ami = "ami-00399ec92321828f5"
   instance_type = "t2.micro"
 
   tags = {
@@ -22,7 +22,7 @@ resource "aws_instance" "myFirstEC2Instance" {
 
     connection {
       type = "ssh"
-      user = "ec2-user"
+      user = "ubuntu"
       private_key = file("~/.ssh/SSHKeys.pem")
       host = aws_instance.myFirstEC2Instance.public_ip
     }
