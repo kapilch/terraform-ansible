@@ -9,7 +9,7 @@
    - action: ping
    - name: create an empty file if it doesn't exist
      file:
-      path: $HOME/test_file
+      path: ~/test_file.txt
       state: touch
       # ping
       # apt: name=nginx state=latest
