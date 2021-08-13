@@ -2,6 +2,7 @@
 - hosts: all
   remote_user: "ubuntu"
   gather_facts: false
+  become: yes
   vars:
     ansible_ssh_private_key_file: "~/.ssh/SSHKeys.pem"
   tasks:
