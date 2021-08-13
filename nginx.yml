@@ -1,8 +1,7 @@
 ---
 - hosts: all
   remote_user: "ubuntu"
-  gather_facts: true
-  host_key_checking: False
+  gather_facts: false
   vars:
     ansible_ssh_private_key_file: "~/.ssh/SSHKeys.pem"
   tasks:
