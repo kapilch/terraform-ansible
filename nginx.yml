@@ -3,17 +3,10 @@
   remote_user: "ubuntu"
   gather_facts: false
   become: yes
-  vars:
-    ansible_ssh_private_key_file: "~/.ssh/SSHKeys.pem"
+
   tasks:
    - action: ping
-   - name: create an empty file if it doesn't exist
-     file:
-      path: ~/test_file.txt
+   - ansible.builtin.file:
+      path: ~/foo.conf
       state: touch
-      # ping
-      # apt: name=nginx state=latest
-    # - name: start nginx
-    #   service:
-    #       name: nginx
-    #       state: started
+      mode: u=rw,g=r,o=r
